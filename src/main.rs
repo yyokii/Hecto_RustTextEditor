@@ -1,9 +1,13 @@
 
+mod document;
 mod editor;
+mod row;
 mod terminal;
+use document::Document;
 use editor::Editor;
-use terminal::Terminal;
 use editor::Position;
+use row::Row;
+use terminal::Terminal;
 
 fn main() {
     Editor::default().run();
