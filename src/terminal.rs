@@ -36,8 +36,8 @@ impl Terminal {
         let Position {mut x, mut y } = positon;
         x = x.saturating_add(1);
         y = y.saturating_add(1);
-        let x = x as u16;
-        let y = y as u16;
+        let x = x.try_into().unwrap();
+        let y = y.try_into().unwrap();
         print!("{}", termion::cursor::Goto(x, y));
     }
     pub fn flush() -> Result<(), std::io::Error> {
